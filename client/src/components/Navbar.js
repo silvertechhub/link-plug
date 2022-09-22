@@ -9,7 +9,7 @@ export default function Navbar() {
 
     const handleLogout = () => {
         logout()
-    }
+    } 
   return (
     <div>
         <h1>PLUG LINKZ</h1>
