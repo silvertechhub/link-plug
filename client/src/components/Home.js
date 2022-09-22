@@ -1,21 +1,15 @@
-import React, { useContext, useState } from 'react'
 import {useNavigate} from 'react-router-dom';
-import { LinksContext } from '../context/LinksContex';
 
 
 export default function Home() {
     const navigate = useNavigate();
-    const {addUser} = useContext(LinksContext)
-    // const [username, setUsername] = useState('');
-    const [okbtn, setOkbtn] = useState(false)
-
+      
     const handleButton = () => {
         navigate('/login');
       
     }
-    const handleOkBtn = () => {
-      setOkbtn(false)
-    }
+   
+    
 
   return (
     <div className=' p-10 '>

@@ -7,9 +7,7 @@ const router = express.Router();
 // require auth for all
 
 
-router.get('/', (req, res) => {
-    res.send({msg: "yup, i see you linktree app"})
-});
+
 
 router.get('/links', requireAuth, getAllLinks)
 router.get('/:id', getSingleLink)
