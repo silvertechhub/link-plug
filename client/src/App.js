@@ -1,5 +1,4 @@
-
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import CreateTree from './components/CreateTree';
@@ -22,7 +21,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        
         <Route path='/create' element={!user ? <Login/> : <CreateTree/> } />
         <Route path='/uniquelink' element={!user ? <Login/> : <UniqueLink /> } />       
         <Route path='/profile' element={!user ? <Login/> : <ProfilePage /> } />       
