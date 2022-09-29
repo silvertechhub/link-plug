@@ -11,7 +11,7 @@ export default function Navbar() {
         logout()
     } 
   return (
-    <div>
+    <div className='bg-gray-400'>
         <h1>PLUG LINKZ</h1>
       {!user && (<div align="right">
           <div><Link to='/signup'>Sign up</Link></div>
@@ -21,6 +21,9 @@ export default function Navbar() {
         {user && (
         <div>
           <span>Hi there, {user.username}!</span>
+          <Link to='/'>Home</Link>
+          <Link to='/create'>Create</Link>
+          <Link to='/profile'>Profile</Link>
           <button onClick={handleLogout}>Log out</button>
         </div>)}
         

@@ -8,7 +8,7 @@ export default function Links({ handleButton}) {
 
   const { user } = AuthHook();
   const { userPlug, dispatch } = useLinkcontextHook();
-
+console.log(user)
   const handleDelete = async () => {
     if(window.confirm(`Are you sure you wanna delete this?`)){
       await axios.delete(`/api/routes/${userPlug[0]._id}`, {headers: 
@@ -44,9 +44,9 @@ export default function Links({ handleButton}) {
                 ))}
                 <button onClick={handleDelete}>delete</button>
                  <h5>Share you Link below</h5>
-                 <p>http://localhost:3000/{details.displayName}</p>
+                 <p>https://link-plug.herokuapp.com/{details.displayName}</p>
                  <CopyToClipboard
-                  text={`http://localhost:3000/${details.displayName}`}
+                  text={`https://link-plug.herokuapp.com/${details.displayName}`}
                   onCopy={() => alert("Copied")}>
                     <button>Copy to clipboard </button>
                  </CopyToClipboard>
