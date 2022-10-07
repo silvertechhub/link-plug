@@ -1,8 +1,8 @@
-const mongoose = require('mongoose')
+const {Schema , model} = require('mongoose')
 const bcrypt = require('bcrypt')
 const validator = require('validator')
 
-const Schema = mongoose.Schema;
+
 
 const authSchema = new Schema({
     email:{
@@ -12,7 +12,7 @@ const authSchema = new Schema({
     },
     password:{
         type: String,
-        required: true
+        
     },
     username:{
         type: String,
@@ -20,7 +20,11 @@ const authSchema = new Schema({
     },
     phoneNumber:{
         type: String,
-        required: true
+        
+    },
+    avatar:{
+        type: String,
+        default: ''
     }
 },{timestamps:true})
 
@@ -71,4 +75,7 @@ authSchema.statics.login = async function (email, password) {
     return loginUser
 }  
 
-module.exports = mongoose.model('auth', authSchema)
+
+const Users = model('auth', authSchema)
+
+module.exports = Users

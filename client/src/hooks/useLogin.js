@@ -28,7 +28,7 @@ export const useLogin = () => {
         }
         if(response.ok){
             setIsLoading(false)
-
+                console.log(json)
                     // save user to local storage
                 localStorage.setItem('user', JSON.stringify(json))
         
@@ -38,5 +38,7 @@ export const useLogin = () => {
         }                  
         
     }
-    return {login, errors, isLoading}
+
+   
+    return {login,  errors, isLoading}
 }

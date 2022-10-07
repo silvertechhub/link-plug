@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import GoogleLogin from 'react-google-login'
 import {Link} from 'react-router-dom'
 import {useSignup} from '../hooks/useSignup'
 
@@ -14,7 +15,7 @@ export default function Signup() {
         e.preventDefault()
         await signUp(email, password, username, phoneNumber)
          
-    }
+    } 
 
   return (
     <div>
@@ -43,6 +44,13 @@ export default function Signup() {
 </p>
         </div>
         <span>Already have an account? <Link to='/login'>Login here</Link></span>
+        
+            <div>
+            <h2>Or</h2>
+            <GoogleLogin 
+              clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+            />
+          </div>
     </div>
   )
 }
