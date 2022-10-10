@@ -42,7 +42,7 @@ export default function Login() {
           navigate(`/uniquelink`) 
       }).catch(err => {
         console.log(err)
-      }) 
+      })  
       
   }
 

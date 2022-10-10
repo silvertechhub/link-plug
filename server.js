@@ -14,10 +14,10 @@ app.use(express.urlencoded());
 
 app.use('/api/routes', appRoutes);
 app.use('/api/userRoutes', userRoutes);
-  
-
+   
+ 
 //  serve static file if in production
-if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'production'){ 
 
     app.use(express.static( "./client/build"))
 
