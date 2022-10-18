@@ -32,15 +32,13 @@ export default function Login() {
     
 
     const handleGoogleLogin = async (response) => {
-      
-      console.log("login okay", response.tokenId)
         await axios.post('/api/userRoutes/googleLogin',
         {token: response.tokenId}).then((res) => {
           console.log(res.data)
           localStorage.setItem('user', JSON.stringify(res.data))
           dispatch({type:'LOGIN', payload: res.data})
           navigate(`/uniquelink`) 
-      }).catch(err => {
+      }).catch(err => { 
         console.log(err)
       })  
       
@@ -63,8 +61,8 @@ export default function Login() {
             <label>Password</label>
             <input type="password" value={password} minLength= '6' onChange={(e) => setPassword(e.target.value)} />
           </div>
-            <input type='submit' value="submit" disabled={isLoading} onSubmit={handleSubmit} />
-            
+            <input type='submit' value="submit" disabled={isLoading} onSubmit={handleSubmit} /><br/>
+            <Link to='/forgotpassword'>Forgot password?</Link>
             {errors && <span>{errors}</span>}
 
         </form>

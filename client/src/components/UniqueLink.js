@@ -23,7 +23,7 @@ export default function UniqueLink() {
       axios.get('/api/routes/links', {headers: 
         { 'Authorization': `Bearer ${user.token}`} 
         }).then(res => {
-         console.log(res)
+        
           dispatch({type: 'DISPLAY_LINKS', payload:res.data}) 
         })
      } 

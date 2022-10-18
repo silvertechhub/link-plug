@@ -10,6 +10,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import { AuthHook } from './hooks/authHooks'
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
 
 function App() {
   const { user } = AuthHook()
@@ -21,6 +23,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/forgotpassword' element={<ForgotPassword />} />
+        <Route path='/resetpassword/:token/:id' element={<ResetPassword />} />
         <Route path='/create' element={!user ? <Login/> : <CreateTree/> } />
         <Route path='/uniquelink' element={!user ? <Login/> : <UniqueLink /> } />       
         <Route path='/profile' element={!user ? <Login/> : <ProfilePage /> } />       

@@ -8,7 +8,6 @@ export default function Links({ handleButton}) {
 
   const { user } = AuthHook();
   const { userPlug, dispatch } = useLinkcontextHook();
-console.log(user)
   const handleDelete = async () => {
     if(window.confirm(`Are you sure you wanna delete this?`)){
       await axios.delete(`/api/routes/${userPlug[0]._id}`, {headers: 
