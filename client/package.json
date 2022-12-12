@@ -1,6 +1,6 @@
 {
   "homepage": ".",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://linkplug.onrender.com",
   "name": "link-tree",
   "version": "0.1.0",
   "private": true,
