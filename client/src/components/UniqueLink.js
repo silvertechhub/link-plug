@@ -39,15 +39,10 @@ export default function UniqueLink() {
     }
   
   return (
-    <div>
-       <Links handleButton={handleButton} userPlug={userPlug} />
-            
-       
-        
-        <div>
-            <button onClick={() => navigate('/create')}>Edit</button>
-        </div>
-        
+    <div className='py-4 '>
+      {user &&  <div className='text-center text-2xl'> Hi there, <span>{user.username}!</span></div>}
+      
+       <Links handleButton={handleButton} userPlug={userPlug} />      
         
     </div>
   )

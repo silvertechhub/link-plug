@@ -18,39 +18,41 @@ export default function Signup() {
     } 
 
   return (
-    <div>
-        <h2> Sign up </h2>
+    <div className='px-6'>
+      <div  className='mt-20 p-10 md:px-52 lg:max-w-md lg:px-20 container rounded-lg border border-gray-200 shadow-md '>
+      <h2 className='text-center text-3xl text-sec font-bold underline underline-offset-4'> Sign up </h2>
         <form onSubmit={handleSubmit}>
             <label>UserName</label>
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} /><br/>
+            <input type="text" className='my-1 border-2 rounded-md focus:outline-pry w-60 md:w-72' value={username} onChange={(e) => setUsername(e.target.value)} /><br/>
 
             <label>Email</label>
-            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} /><br/>
+            <input type="text" className='my-1 border-2 rounded-md focus:outline-pry w-60 md:w-72' value={email} onChange={(e) => setEmail(e.target.value)} /><br/>
 
             <label>Password</label>
-            <input type="password" value={password} minLength= '6' onChange={(e) => setPassword(e.target.value)} /> <br/>
+            <input type="password" className='my-1 border-2 rounded-md focus:outline-pry w-60 md:w-72' value={password} minLength= '6' onChange={(e) => setPassword(e.target.value)} /> <br/>
             
             <label>Phone Number</label>
-            <input type="number" value={phoneNumber} minLength= '11' onChange={(e) => setPhoneNumber(e.target.value)} /><br/>
+            <input type="number" className='my-1 border-2 rounded-md focus:outline-pry w-60 md:w-72' value={phoneNumber} minLength= '11' onChange={(e) => setPhoneNumber(e.target.value)} /><br/>
 
-
-            <input type='submit' value="submit" disabled={isLoading} onSubmit={handleSubmit} />
+            <div className='py-4 flex justify-center'>
+            <input type='submit' className='bg-pry w-40 h-10 text-white rounded-2xl' value="submit" disabled={isLoading} onSubmit={handleSubmit} />
+            </div>
         </form>
-        {errors && <p>{errors}</p>}
+        {errors && <p className='text-sm text-red-600'>{errors}</p>}
         <div>
-          <p>By creating an account you are agreeing to our <a href='#'>Terms and Conditions</a> and confirm you have read our Privacy Notice.
-
-
-</p>
-        </div>
-        <span>Already have an account? <Link to='/login'>Login here</Link></span>
+          <p>By creating an account you are agreeing to our 
+            <Link to='#' className='text-pry underline underline-offset-2'> Terms and Conditions</Link> and confirm you have read our Privacy Notice. </p>
+        </div><br/>
+        <span>Already have an account? <Link to='/login' className='text-pry'>Login</Link></span>
         
             <div>
-            <h2>Or</h2>
+            <h2 className='text-2xl font-semibold text-sec text-center py-4'>Or</h2>
             <GoogleLogin 
               clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
             />
           </div>
+      </div>
+        
     </div>
   )
 }

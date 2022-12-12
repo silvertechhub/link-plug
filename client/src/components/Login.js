@@ -50,24 +50,29 @@ export default function Login() {
 
   
   return (
-    <div>
-        <h2> Login </h2>
+    <div className='px-6 lg:flex justify-center'>
+      <div className='mt-20 p-10 md:px-52 lg:max-w-md lg:px-20 container rounded-lg border border-gray-200 shadow-md '>
+      <h2 className='text-center text-3xl text-sec font-bold underline underline-offset-4'> Login </h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Email</label>
-            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </div>
+            <label>Email: </label><br/>
+            <input type="text" className='my-1 border-2 rounded-md focus:outline-pry w-60 md:w-72' value={email} onChange={(e) => setEmail(e.target.value)} />
+          </div><br/>
           <div>
-            <label>Password</label>
-            <input type="password" value={password} minLength= '6' onChange={(e) => setPassword(e.target.value)} />
+            <label>Password: </label><br/>
+            <input type="password" className='my-1 border-2 rounded-md focus:outline-pry w-60 md:w-72' value={password} minLength= '6' onChange={(e) => setPassword(e.target.value)} />
+          </div><br/>
+          <div className='flex justify-center'>
+            <input type='submit' value="submit" className='bg-pry w-40 h-10 text-white rounded-2xl' disabled={isLoading} onSubmit={handleSubmit} /><br/>
           </div>
-            <input type='submit' value="submit" disabled={isLoading} onSubmit={handleSubmit} /><br/>
-            <Link to='/forgotpassword'>Forgot password?</Link>
-            {errors && <span>{errors}</span>}
-
+          <div className='px-14 py-5'>
+            <Link to='/forgotpassword' className='text-sec'>Forgot password?</Link><br/>
+            {errors && <span className='text-sm text-red-600'>{errors}</span>}
+            <span className=''>First Time? <Link to='/signup' className='text-pry underline underline-offset-4'>Sign up</Link></span>
+          </div>
         </form>
-        <span>First Time? <Link to='/signup'>Sign up here</Link></span>
-        <h2>Or</h2>
+       
+        <h2 className='text-2xl font-semibold text-sec text-center py-4'>Or</h2>
             <div>
             <GoogleLogin 
               clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
@@ -77,6 +82,8 @@ export default function Login() {
               cookiePolicy={'single_host_origin'}
             />
           </div>
+      </div>
+       
     </div>
   )
 }

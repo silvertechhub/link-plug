@@ -18,11 +18,17 @@ export default function ForgotPassword() {
         })
     }
   return (
-    <div>
-        <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter the email you used to register'/>
-        <button onClick={handleSubmit}>Submit</button>
-        {serverRes && <div>{serverRes}</div>}
-        <ToastContainer />
+    <div className='px-6'>
+       <div className='mt-20 p-10 md:px-52 lg:max-w-md lg:px-20 container rounded-lg border border-gray-200 shadow-md '>
+       <h2 className='text-center text-3xl text-sec font-bold underline underline-offset-4'> Forgot Password </h2><br/>
+        <input type='text' className='my-1 border-2 rounded-md focus:outline-pry w-60 md:w-72' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your registered email'/>
+          <div className='flex justify-center py-3'>
+            <button className='bg-pry w-40 h-10 text-white rounded-2xl' onClick={handleSubmit}>Submit</button>
+          </div>
+          {serverRes && <div>{serverRes}</div>}
+          <ToastContainer />
+       </div>
+        
     </div>
   )
 }
