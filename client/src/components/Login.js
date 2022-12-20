@@ -68,7 +68,7 @@ export default function Login() {
           <div className='px-14 py-5'>
             <Link to='/forgotpassword' className='text-sec'>Forgot password?</Link><br/>
             {errors && <span className='text-sm text-red-600'>{errors}</span>}
-            <span className=''>First Time? <Link to='/signup' className='text-pry underline underline-offset-4'>Sign up</Link></span>
+            <span className='text-xs'>First Time? <Link to='/signup' className='text-pry underline underline-offset-4'>Sign up</Link></span>
           </div>
         </form>
        

@@ -1,5 +1,4 @@
-{
-  "homepage": ".",
+{  
   "proxy": "https://linkplug.onrender.com",
   "name": "link-tree",
   "version": "0.1.0",

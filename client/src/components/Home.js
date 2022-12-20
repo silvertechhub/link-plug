@@ -59,7 +59,7 @@ export default function Home() {
         <Lottie options={defaultOptions} height={300} width={300} />
           <p className='text-lg text-center px-4 py-5 text-sec'>
             Put all your profile (social media, music, blog-articles) togther and share with one single link
-            <br /><Link to='/signup' className='text-pry text-lg'>Start Now>> </Link>
+            <br /><Link to='/signup' className='text-pry text-lg'>Start Now &gt; </Link>
             </p>
             
         </div>
@@ -68,7 +68,7 @@ export default function Home() {
           <Lottie options={track} height={300} width={300} />
           <p className='text-lg text-center px-4 py-5 text-sec'>
            Get anayltics and data of the number of people that are clicking on your link
-            <br /><Link to='/signup' className='text-pry text-lg'>Learn more>> </Link>
+            <br /><Link to='/signup' className='text-pry text-lg'>Learn more &gt; </Link>
             </p>
         </div>
         <div>
@@ -76,7 +76,7 @@ export default function Home() {
           <Lottie options={tiktok} height={300} width={300} />
           <p className='text-lg text-center px-4 py-5 text-sec'>
            Add your tiktok profile to your Link plug directly from the Tiktok app. 
-            <br /><Link to='/signup' className='text-pry text-lg'>Sign up>> </Link>
+            <br /><Link to='/signup' className='text-pry text-lg'>Sign up &gt; </Link>
             </p>
         </div>
         </div>
